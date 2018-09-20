@@ -70,3 +70,4 @@ nmap <silent> <C-n>      :NERDTreeToggle<CR>
 " -------------------------------------
 
 colorscheme tender
+set t_Co=256
