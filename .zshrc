@@ -38,6 +38,8 @@ zstyle ':zle:*' word-style unspecified
 ########################################
 # 補完
 # 補完機能を有効にする
+autoload predict-on
+predict-on
 autoload -Uz compinit
 compinit
 
