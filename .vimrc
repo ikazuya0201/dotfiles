@@ -27,6 +27,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 	" コメントアウトが楽に
 	NeoBundle 'tpope/vim-commentary'
 
+    NeoBundle 'faith/vim-go'
+
 call neobundle#end()
 
 " Required:
