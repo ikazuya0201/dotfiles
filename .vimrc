@@ -27,8 +27,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 	" コメントアウトが楽に
 	NeoBundle 'tpope/vim-commentary'
 
-    NeoBundle 'faith/vim-go'
-
 call neobundle#end()
 
 " Required:
@@ -40,7 +38,7 @@ NeoBundleCheck
 
 
 " ---------------------------------------
-" 編集に関する設定:
+" 編集に関する設定
 " ---------------------------------------
 " タブの画面上での幅
 set tabstop=4
@@ -48,7 +46,7 @@ set tabstop=4
 set shiftwidth=4
 " タブの代わりに空白文字を指定する
 set expandtab
-" 新しい行のインデントを現在行と同じにする
+" 新しい行をいい感じにインデントする
 set smartindent
 " 行番号を表示
 set number
@@ -59,11 +57,11 @@ syntax on
 "  NERDTreeの設定
 " --------------------------------------
 
-" .ファイルの表示（1: 表示）
+" dotfileの表示(1: 表示)
 let NERDTreeShowHidden=1
-" ブックマークを表示 (1:表示)
+" ブックマークを表示(1: 表示)
 let g:NERDTreeShowBookmarks=1
-" 表示・非表示切り替え(<Cmd-n>で開く)
+" 表示非表示の切り替え(<C-n>で開く)
 nmap <silent> <C-n>      :NERDTreeToggle<CR>
 
 
@@ -73,3 +71,9 @@ nmap <silent> <C-n>      :NERDTreeToggle<CR>
 
 colorscheme tender
 set t_Co=256
+
+"  -----------------------------------
+"  utf-8
+"  -----------------------------------
+set encoding=utf-8
+set fileencoding=utf-8
