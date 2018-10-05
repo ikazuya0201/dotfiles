@@ -123,7 +123,6 @@ alias -g G='| grep'
 # --------------------------------------------------
 
 alias g="git"
-compdef g=git
 
 alias gs='git status --short --branch'
 alias ga='git add -A'
