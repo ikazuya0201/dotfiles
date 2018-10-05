@@ -35,25 +35,6 @@ select-word-style default
 zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
-########################################
-# 補完
-# 補完機能を有効にする
-autoload predict-on
-predict-on
-autoload -Uz compinit
-compinit
-
-# 補完で小文字でも大文字にマッチさせる
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# ../ の後は今いるディレクトリを補完しない
-zstyle ':completion:*' ignore-parents parent pwd ..
-
-# sudo の後ろでコマンド名を補完する
-zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
-                   /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
-
-# ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 
@@ -122,7 +103,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 # エイリアス
 
 alias la='ls -a'
-alias ll='ls -l'
+alias ll='ls -la'
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -179,7 +160,7 @@ alias drmi='docker rmi'
 alias ds='docker stop'
 alias dki='docker run -it --name'
 alias dkd='docker run -td --name'
-dec() {docker exec -it $1 bash;}
+dec() {docker exec -it $1 zsh;}
 dbu() {docker build -t=$1 .;}
 
 # ls のディレクトリの色を変更
