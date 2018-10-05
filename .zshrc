@@ -183,7 +183,7 @@ dec() {docker exec -it $1 bash;}
 dbu() {docker build -t=$1 .;}
 
 # ls のディレクトリの色を変更
-export LSCOLORS=gxfxcxdxbxegedabagacad
+export export LS_COLORS='di=01;36'
 
 
 # C で標準出力をクリップボードにコピーする
