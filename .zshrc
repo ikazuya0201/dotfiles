@@ -159,8 +159,16 @@ alias drmi='docker rmi'
 alias ds='docker stop'
 alias dki='docker run -it --name'
 alias dkd='docker run -td --name'
+alias dsa='docker stop $(docker ps -q)'
+alias drma='docker rm $(docker ps -q -a)'
 dec() {docker exec -it $1 zsh;}
 dbu() {docker build -t=$1 .;}
+
+# -------------------------------------------------
+# cargo
+# -------------------------------------------------
+
+source $HOME/.cargo/env
 
 # ls のディレクトリの色を変更
 export export LS_COLORS='di=01;36'
