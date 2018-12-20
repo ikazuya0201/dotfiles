@@ -168,10 +168,10 @@ dbu() {docker build -t=$1 .;}
 # cargo
 # -------------------------------------------------
 
-source $HOME/.cargo/env
+#source $HOME/.cargo/env
 
 # ls のディレクトリの色を変更
-export export LS_COLORS='di=01;36'
+export LS_COLORS='di=01;36'
 
 
 # C で標準出力をクリップボードにコピーする
