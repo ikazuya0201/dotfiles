@@ -172,6 +172,8 @@ alias k='kubectl'
 alias kdel='kubectl delete'
 alias kget='kubectl get'
 alias kdes='kubectl describe'
+alias kc='kubectl create -f'
+alias kl='kubectl logs'
 
 # -------------------------------------------------
 # cargo
