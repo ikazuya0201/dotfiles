@@ -165,6 +165,15 @@ dec() {docker exec -it $1 zsh;}
 dbu() {docker build -t=$1 .;}
 
 # -------------------------------------------------
+# kubernetes エイリアス
+# -------------------------------------------------
+
+alias k='kubectl'
+alias kdel='kubectl delete'
+alias kget='kubectl get'
+alias kdes='kubectl describe'
+
+# -------------------------------------------------
 # cargo
 # -------------------------------------------------
 
@@ -204,3 +213,9 @@ case ${OSTYPE} in
 esac
 
 # vim:set ft=zsh:
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/iimurokazuya/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/iimurokazuya/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/iimurokazuya/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/iimurokazuya/google-cloud-sdk/completion.zsh.inc'; fi
