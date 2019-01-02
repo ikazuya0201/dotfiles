@@ -161,7 +161,7 @@ alias dki='docker run -it --name'
 alias dkd='docker run -td --name'
 alias dsa='docker stop $(docker ps -q)'
 alias drma='docker rm $(docker ps -q -a)'
-dec() {docker exec -it $1 zsh;}
+alias dec='docker exec -it'
 dbu() {docker build -t=$1 .;}
 
 # -------------------------------------------------
@@ -174,6 +174,8 @@ alias kget='kubectl get'
 alias kdes='kubectl describe'
 alias kc='kubectl create -f'
 alias kl='kubectl logs'
+alias ka='kubectl apply -f'
+alias kec='kubectl exec -it'
 
 # -------------------------------------------------
 # cargo
