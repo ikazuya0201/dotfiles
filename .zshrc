@@ -180,8 +180,11 @@ alias kec='kubectl exec -it'
 # -------------------------------------------------
 # kube-ps1
 # -------------------------------------------------
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-PS1='$(kube_ps1)'$PS1
+if [ -e "/usr/local/opt/kube-psq/share/kube-ps1.sh" ]; then
+    source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+    PS1='$(kube_ps1)'$PS1
+fi
+
 # -------------------------------------------------
 # cargo
 # -------------------------------------------------
