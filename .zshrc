@@ -192,7 +192,18 @@ fi
 # cargo
 # -------------------------------------------------
 
-#source $HOME/.cargo/env
+if [ -e $HOME/.cargo/env ]; then
+    source $HOME/.cargo/env
+fi
+
+# -------------------------------------------------
+# tmux
+# -------------------------------------------------
+
+# 初回シェル起動時のみtmux起動
+if [ $SHLVL = 1 ]; then
+    tmux
+fi
 
 # ls のディレクトリの色を変更
 #export LSCOLORS='di=01;36'
