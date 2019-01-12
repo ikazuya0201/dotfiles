@@ -31,7 +31,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'digitaltoad/vim-pug'
 
     " goのパッケージ
-    NeoBundle 'faith/vim-go'
+    NeoBundle 'fatih/vim-go'
 
 call neobundle#end()
 
