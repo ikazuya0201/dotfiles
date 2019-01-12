@@ -27,6 +27,12 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 	" コメントアウトが楽に
 	NeoBundle 'tpope/vim-commentary'
 
+    " pug
+    NeoBundle 'digitaltoad/vim-pug'
+
+    " goのパッケージ
+    NeoBundle 'faith/vim-go'
+
 call neobundle#end()
 
 " Required:
@@ -84,3 +90,14 @@ set fileencoding=utf-8
 "  clipboard
 "  -----------------------------------
 set clipboard+=unnamed
+
+
+"  -----------------------------------
+"  拡張仕事のインデントの設定
+"  -----------------------------------
+if has("autocmd")
+    filetype plugin on
+    filetype indent on
+
+    autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et
+endif
