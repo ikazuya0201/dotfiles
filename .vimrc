@@ -100,4 +100,5 @@ if has("autocmd")
     filetype indent on
 
     autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et
+    autocmd FileType pug setlocal sw=2 sts=2 ts=2 et
 endif
