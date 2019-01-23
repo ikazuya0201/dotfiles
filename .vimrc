@@ -30,8 +30,19 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     " pug
     NeoBundle 'digitaltoad/vim-pug'
 
-    " goのパッケージ
+    " go用のパッケージが色々入ったやつ
     NeoBundle 'fatih/vim-go'
+
+    if has('lua')
+        " コードの補完
+        NeoBundle 'Shougo/neocomplete.vim'
+        " スニペットの補完機能
+        NeoBundle 'Shougo/neosnippet'
+        " スニペット集
+        NeoBundle 'Shougo/neosnippet-snippets'
+
+    endif
+
 
 call neobundle#end()
 
@@ -58,6 +69,8 @@ set expandtab
 set smartindent
 " 行番号を表示
 set number
+" ファイル名を常に表示
+set laststatus=2
 " シンタックスハイライトを有効に
 syntax on
 
@@ -92,8 +105,44 @@ set fileencoding=utf-8
 set clipboard+=unnamed
 
 
+"----------------------------------------------------------
+" neocomplete・neosnippetの設定
+"----------------------------------------------------------
+if neobundle#is_installed('neocomplete.vim')
+    " Vim起動時にneocompleteを有効にする
+    let g:neocomplete#enable_at_startup = 1
+    " smartcase有効化. 大文字が入力されるまで大文字小文字の区別を無視する
+    let g:neocomplete#enable_smart_case = 1
+    " 3文字以上の単語に対して補完を有効にする
+    let g:neocomplete#min_keyword_length = 3
+    " 区切り文字まで補完する
+    let g:neocomplete#enable_auto_delimiter = 1
+    " 1文字目の入力から補完のポップアップを表示
+    let g:neocomplete#auto_completion_start_length = 1
+    " バックスペースで補完のポップアップを閉じる
+    inoremap <expr><BS> neocomplete#smart_close_popup()."<C-h>"
+
+    " エンターキーで補完候補の確定. スニペットの展開もエンターキーで確定・・・・・・â¡
+    imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
+    " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ・・・・・・③
+    imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
+endif
+
+"-----------------------------------
+" backspaceなどの設定
+"-----------------------------------
+
+"viとの互換性を無効にする(INSERT中にカーソルキーが有効になる)
+set nocompatible
+""カーソルを行頭，行末で止まらないようにする
+set whichwrap=b,s,h,l,<,>,[,]
+"BSで削除できるものを指定する
+"" indent  : 行頭の空白
+" eol     : 改行
+" " start   : 挿入モード開始位置より手前の文字
+set backspace=indent,eol,start
 "  -----------------------------------
-"  拡張仕事のインデントの設定
+"  拡張インデントの設定
 "  -----------------------------------
 if has("autocmd")
     filetype plugin on
@@ -101,4 +150,5 @@ if has("autocmd")
 
     autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et
     autocmd FileType pug setlocal sw=2 sts=2 ts=2 et
+    autocmd FileType amber setlocal sw=2 sts=2 ts=2 et
 endif

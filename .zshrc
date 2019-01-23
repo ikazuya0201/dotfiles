@@ -147,6 +147,13 @@ alias gb='git branch'
 alias gm='git merge'
 alias gr='git reset'
 
+
+# --------------------------------------------------
+# docker completion
+# --------------------------------------------------
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
+
 # --------------------------------------------------
 # docker エイリアス
 # --------------------------------------------------
