@@ -33,6 +33,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     " go用のパッケージが色々入ったやつ
     NeoBundle 'fatih/vim-go'
 
+    NeoBundle 'nsf/gocode'
+
     if has('lua')
         " コードの補完
         NeoBundle 'Shougo/neocomplete.vim'
@@ -121,7 +123,6 @@ if neobundle#is_installed('neocomplete.vim')
     let g:neocomplete#auto_completion_start_length = 1
     " バックスペースで補完のポップアップを閉じる
     inoremap <expr><BS> neocomplete#smart_close_popup()."<C-h>"
-
     " エンターキーで補完候補の確定. スニペットの展開もエンターキーで確定・・・・・・â¡
     imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
     " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ・・・・・・③
@@ -151,4 +152,5 @@ if has("autocmd")
     autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et
     autocmd FileType pug setlocal sw=2 sts=2 ts=2 et
     autocmd FileType amber setlocal sw=2 sts=2 ts=2 et
+    autocmd FileType html setlocal sw=2 sts=2 ts=2 et
 endif
