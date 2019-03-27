@@ -35,6 +35,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
     NeoBundle 'nsf/gocode'
 
+    NeoBundle 'cespare/vim-toml'
+
     if has('lua')
         " コードの補完
         NeoBundle 'Shougo/neocomplete.vim'
