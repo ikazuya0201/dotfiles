@@ -33,8 +33,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     " go用のパッケージが色々入ったやつ
     NeoBundle 'fatih/vim-go'
 
-    NeoBundle 'nsf/gocode'
-
+    " tomlのシンタックスハイライト
     NeoBundle 'cespare/vim-toml'
 
     if has('lua')
