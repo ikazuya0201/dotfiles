@@ -265,6 +265,6 @@ export PATH=$PATH:$GOPATH/bin
 # --------------------------------------------------
 # ros
 # --------------------------------------------------
-source /opt/ros/kinetic/setup.zsh
-source $HOME/catkin_ws/devel/setup.zsh
+# source /opt/ros/kinetic/setup.zsh
+# source $HOME/catkin_ws/devel/setup.zsh
 
