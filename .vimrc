@@ -142,6 +142,10 @@ if neobundle#is_installed('rust.vim')
     let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
 endif
 
+set hidden
+let g:racer_cmd = '$HOME/.cargo/bin/racer'
+let g:racer_experimental_completer = 1
+
 "-----------------------------------
 " backspaceなどの設定
 "-----------------------------------
@@ -168,4 +172,5 @@ if has("autocmd")
     autocmd FileType html setlocal sw=2 sts=2 ts=2 et
 endif
 
-au BufRead *.launch set filetype=xml
+au BufNewFile,BufRead *.launch set filetype=xml
+au BufNewFile,BufRead *.rs set filetype=rust
