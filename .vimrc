@@ -36,6 +36,10 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     " tomlのシンタックスハイライト
     NeoBundle 'cespare/vim-toml'
 
+    " rust用のプラグイン
+    NeoBundle 'rust-lang/rust.vim'
+    NeoBundle 'racer-rust/vim-racer'
+
     if has('lua')
         " コードの補完
         NeoBundle 'Shougo/neocomplete.vim'
@@ -130,6 +134,15 @@ if neobundle#is_installed('neocomplete.vim')
     imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
     " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ
     imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
+endif
+
+
+"-----------------------------------
+" rustの設定
+"-----------------------------------
+if neobundle#is_installed('rust.vim')
+    let g:rustfmt_autosave = 1
+    let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
 endif
 
 "-----------------------------------
