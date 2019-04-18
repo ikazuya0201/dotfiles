@@ -118,6 +118,9 @@ alias sudo='sudo '
 alias -g L='| less'
 alias -g G='| grep'
 
+# pbcopy
+alias pbcopy='xsel --clipboard --input'
+
 # --------------------------------------------------
 #  git エイリアス
 # --------------------------------------------------
@@ -258,3 +261,10 @@ if [ -f '/Users/iimurokazuya/google-cloud-sdk/completion.zsh.inc' ]; then . '/Us
 # --------------------------------------------------
 
 export PATH=$PATH:$GOPATH/bin
+
+# --------------------------------------------------
+# ros
+# --------------------------------------------------
+source /opt/ros/kinetic/setup.zsh
+source $HOME/catkin_ws/devel/setup.zsh
+

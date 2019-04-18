@@ -30,9 +30,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     " pug
     NeoBundle 'digitaltoad/vim-pug'
 
-    " go用のパッケージが色々入ったやつ
-    NeoBundle 'fatih/vim-go'
-
     " tomlのシンタックスハイライト
     NeoBundle 'cespare/vim-toml'
 
@@ -170,3 +167,5 @@ if has("autocmd")
     autocmd FileType amber setlocal sw=2 sts=2 ts=2 et
     autocmd FileType html setlocal sw=2 sts=2 ts=2 et
 endif
+
+au BufRead *.launch set filetype=xml
