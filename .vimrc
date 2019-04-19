@@ -71,6 +71,8 @@ set expandtab
 set smartindent
 " 行番号を表示
 set number
+" 相対的な行番号を表示
+set relativenumber
 " ファイル名を常に表示
 set laststatus=2
 " シンタックスハイライトを有効に
