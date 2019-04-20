@@ -24,24 +24,23 @@ if dein#load_state('~/.cache/dein')
 	" IDEみたいなサイドメニュー
 	call dein#add('scrooloose/nerdtree')
 
-	" yamlのシンタックスハイライト等
-	call dein#add('chase/vim-ansible-yaml')
-
 	" コメントアウトが楽に
 	call dein#add('tpope/vim-commentary')
 
-    " pug
-    call dein#add('digitaltoad/vim-pug')
+    " accelerated-jk
+    call dein#add('rhysd/accelerated-jk')
 
-    " tomlのシンタックスハイライト
-    call dein#add('cespare/vim-toml')
+    " 強いステータスバー
+    call dein#add('vim-airline/vim-airline')
 
-    " rust用のプラグイン
-    call dein#add('rust-lang/rust.vim')
-    call dein#add('racer-rust/vim-racer')
+    " gitの差分表示
+    call dein#add('airblade/vim-gitgutter')
 
-    " go
-    call dein#add('faith/vim-go')
+    " tex
+    call dein#add('lervag/vimtex')
+
+    " ヤンク履歴
+    call dein#add('vim-scripts/YankRing.vim')
 
     if has('lua')
         " コードの補完
@@ -54,6 +53,25 @@ if dein#load_state('~/.cache/dein')
 		call dein#add('roxma/nvim-yarp')
 		call dein#add('roxma/vim-hug-neovim-rpc')
 	endif
+
+    " file種類別のプラグイン-----------------------
+	" yamlのシンタックスハイライト等
+	call dein#add('chase/vim-ansible-yaml')
+
+    " pug
+    call dein#add('digitaltoad/vim-pug')
+
+    " tomlのシンタックスハイライト
+    call dein#add('cespare/vim-toml')
+
+    " rust用のプラグイン
+    call dein#add('rust-lang/rust.vim')
+    call dein#add('racer-rust/vim-racer')
+
+    " go
+    call dein#add('fatih/vim-go')
+
+    "----------------------------------------------
 
 	call dein#end()
 	call dein#save_state()
