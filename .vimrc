@@ -37,6 +37,9 @@ if dein#load_state('~/.cache/dein')
     call dein#add('rust-lang/rust.vim')
     call dein#add('racer-rust/vim-racer')
 
+    " go
+    call dein#add('faith/vim-go')
+
     if has('lua')
         " コードの補完
         call dein#add('Shougo/neocomplete.vim')
