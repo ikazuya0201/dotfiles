@@ -180,6 +180,7 @@ alias dkd='docker run -td --name'
 alias dsa='docker stop $(docker ps -q)'
 alias drma='docker rm $(docker ps -q -a)'
 alias dec='docker exec -it'
+alias dl='docker logs'
 dbu() {docker build -t=$1 .;}
 
 # -------------------------------------------------
