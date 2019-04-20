@@ -1,6 +1,17 @@
-# 少し凝った zshrc
-# License : MIT
-# http://mollifier.mit-license.org/
+########################################
+# OS 別の設定
+case ${OSTYPE} in
+    darwin*)
+        #Mac用の設定
+        export CLICOLOR=1
+        alias ls='ls -G -F'
+        ;;
+    linux*)
+        #Linux用の設定
+        alias ls='ls -F --color=auto'
+		alias pbcopy='xsel --clipboard --input'
+        ;;
+esac
 
 ########################################
 # 環境変数
@@ -117,9 +128,6 @@ alias sudo='sudo '
 # グローバルエイリアス
 alias -g L='| less'
 alias -g G='| grep'
-
-# pbcopy
-alias pbcopy='xsel --clipboard --input'
 
 # --------------------------------------------------
 #  git エイリアス
@@ -239,20 +247,6 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
-
-########################################
-# OS 別の設定
-case ${OSTYPE} in
-    darwin*)
-        #Mac用の設定
-        export CLICOLOR=1
-        alias ls='ls -G -F'
-        ;;
-    linux*)
-        #Linux用の設定
-        alias ls='ls -F --color=auto'
-        ;;
-esac
 
 # vim:set ft=zsh:
 
