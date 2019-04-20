@@ -1,60 +1,60 @@
 " ----------------------------
-" NeoBundle
+" dein.vim
 " ----------------------------
-if 0 | endif
 
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+if &compatible
+  set nocompatible
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-  NeoBundleFetch 'Shougo/neobundle.vim'
+if dein#load_state('~/.cache/dein')
+	call dein#begin('~/.cache/dein')
+
+	call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+	call dein#add('Shougo/deoplete.nvim')
 
 	" vimgrepの結果に対して一括置換
-	NeoBundle 'thinca/vim-qfreplace'
+	call dein#add('thinca/vim-qfreplace')
 
 	" IDEみたいなサイドメニュー
-	NeoBundle 'scrooloose/nerdtree'
+	call dein#add('scrooloose/nerdtree')
 
 	" yamlのシンタックスハイライト等
-	NeoBundle 'chase/vim-ansible-yaml'
+	call dein#add('chase/vim-ansible-yaml')
 
 	" コメントアウトが楽に
-	NeoBundle 'tpope/vim-commentary'
+	call dein#add('tpope/vim-commentary')
 
     " pug
-    NeoBundle 'digitaltoad/vim-pug'
+    call dein#add('digitaltoad/vim-pug')
 
     " tomlのシンタックスハイライト
-    NeoBundle 'cespare/vim-toml'
+    call dein#add('cespare/vim-toml')
 
     " rust用のプラグイン
-    NeoBundle 'rust-lang/rust.vim'
-    NeoBundle 'racer-rust/vim-racer'
+    call dein#add('rust-lang/rust.vim')
+    call dein#add('racer-rust/vim-racer')
 
     if has('lua')
         " コードの補完
-        NeoBundle 'Shougo/neocomplete.vim'
+        call dein#add('Shougo/neocomplete.vim')
         " スニペットの補完機能
-        NeoBundle 'Shougo/neosnippet'
-
+        call dein#add('Shougo/neosnippet')
     endif
 
+	if !has('nvim')
+		call dein#add('roxma/nvim-yarp')
+		call dein#add('roxma/vim-hug-neovim-rpc')
+	endif
 
-call neobundle#end()
+	call dein#end()
+	call dein#save_state()
+endif
 
-" Required:
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-
+syntax enable
 
 " ---------------------------------------
 " 編集に関する設定
@@ -112,7 +112,7 @@ set clipboard+=unnamed
 "----------------------------------------------------------
 " neocomplete・neosnippetの設定
 "----------------------------------------------------------
-if neobundle#is_installed('neocomplete.vim')
+if dein#tap('neocomplete.vim')
     " Vim起動時にneocompleteを有効にする
     let g:neocomplete#enable_at_startup = 1
     " smartcase有効化. 大文字が入力されるまで大文字小文字の区別を無視する
@@ -139,7 +139,7 @@ endif
 "-----------------------------------
 " rustの設定
 "-----------------------------------
-if neobundle#is_installed('rust.vim')
+if dein#tap('rust.vim')
     let g:rustfmt_autosave = 1
     let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
 endif
