@@ -15,6 +15,9 @@ if dein#load_state('~/.cache/dein')
 
 	call dein#add('Shougo/deoplete.nvim')
 
+    " colorscheme
+    call dein#add('jacoborus/tender.vim')
+
 	" vimgrepの結果に対して一括置換
 	call dein#add('thinca/vim-qfreplace')
 
@@ -96,7 +99,6 @@ nmap <silent> <C-n>      :NERDTreeToggle<CR>
 " -------------------------------------
 "  color schemeの設定
 " -------------------------------------
-
 colorscheme tender
 set t_Co=256
 
