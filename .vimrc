@@ -65,7 +65,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('cespare/vim-toml')
 
     " rust用のプラグイン
-    call dein#add('rust-lang/rust.vim')
+    " call dein#add('rust-lang/rust.vim')
     call dein#add('racer-rust/vim-racer')
 
     " go
