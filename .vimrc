@@ -71,6 +71,9 @@ if dein#load_state('$HOME/.cache/dein')
     " go
     call dein#add('fatih/vim-go')
 
+    " python
+    call dein#add('hdima/python-syntax')
+
     "----------------------------------------------
 
 	call dein#end()
@@ -103,6 +106,8 @@ set number
 set relativenumber
 " ファイル名を常に表示
 set laststatus=2
+" カーソル行を強調
+set cursorline
 " シンタックスハイライトを有効に
 syntax on
 
