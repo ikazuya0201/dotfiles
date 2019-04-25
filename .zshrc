@@ -274,6 +274,8 @@ export PATH=$PATH:$GOPATH/bin
 # --------------------------------------------------
 # ros
 # --------------------------------------------------
-# source /opt/ros/kinetic/setup.zsh
-# source $HOME/catkin_ws/devel/setup.zsh
+if [ -e /opt/ros/kinetic/setup.zsh ] && [ -e $HOME/catkin_ws/devel/setup.zsh ]; then
+    source /opt/ros/kinetic/setup.zsh
+    source $HOME/catkin_ws/devel/setup.zsh
+fi
 
