@@ -111,7 +111,7 @@ let NERDTreeShowHidden=1
 " ブックマークを表示(1: 表示)
 let g:NERDTreeShowBookmarks=1
 " 表示非表示の切り替え(<C-n>で開く)
-nmap <silent> <C-n>      :NERDTreeToggle<CR>
+nmap <silent> <C-x>      :NERDTreeToggle<CR>
 
 
 " -------------------------------------
