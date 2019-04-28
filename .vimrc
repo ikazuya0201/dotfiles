@@ -6,12 +6,12 @@ if &compatible
   set nocompatible
 endif
 
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.cache/dein')
-	call dein#begin('~/.cache/dein')
+if dein#load_state('$HOME/.cache/dein')
+	call dein#begin('$HOME/.cache/dein')
 
-	call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+	call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
 
 	call dein#add('Shougo/deoplete.nvim')
 
@@ -71,6 +71,9 @@ if dein#load_state('~/.cache/dein')
     " go
     call dein#add('fatih/vim-go')
 
+    " python
+    call dein#add('hdima/python-syntax')
+
     "----------------------------------------------
 
 	call dein#end()
@@ -79,6 +82,10 @@ endif
 
 filetype plugin indent on
 syntax enable
+
+if dein#check_install()
+    call dein#install()
+endif
 
 " ---------------------------------------
 " 編集に関する設定
@@ -99,6 +106,8 @@ set number
 set relativenumber
 " ファイル名を常に表示
 set laststatus=2
+" カーソル行を強調
+set cursorline
 " シンタックスハイライトを有効に
 syntax on
 
