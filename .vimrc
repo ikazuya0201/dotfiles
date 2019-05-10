@@ -116,8 +116,7 @@ syntax on
 " --------------------------------------
 
 " dotfileの表示(1: 表示)
-let NERDTreeShowHidden=1
-" ブックマークを表示(1: 表示)
+let NERDTreeShowHidden=1 " ブックマークを表示(1: 表示)
 let g:NERDTreeShowBookmarks=1
 " 表示非表示の切り替え(<C-n>で開く)
 nmap <silent> <C-n>      :NERDTreeToggle<CR>
@@ -193,6 +192,12 @@ set whichwrap=b,s,h,l,<,>,[,]
 " eol     : 改行
 " " start   : 挿入モード開始位置より手前の文字
 set backspace=indent,eol,start
+
+"  -----------------------------------
+"  filetypeの変更
+"  -----------------------------------
+au BufNewFile,BufRead *.launch set filetype=xml
+au BufNewFile,BufRead *.rs set filetype=rust
 "  -----------------------------------
 "  拡張インデントの設定
 "  -----------------------------------
@@ -206,5 +211,3 @@ if has("autocmd")
     autocmd FileType html setlocal sw=2 sts=2 ts=2 et
 endif
 
-au BufNewFile,BufRead *.launch set filetype=xml
-au BufNewFile,BufRead *.rs set filetype=rust
