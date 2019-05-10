@@ -28,8 +28,7 @@ if dein#load_state('$HOME/.cache/dein')
 	call dein#add('tpope/vim-commentary')
 
     " accelerated-jk
-    call dein#add('rhysd/accelerated-jk')
-
+    call dein#add('rhysd/accelerated-jk') 
     " 強いステータスバー
     call dein#add('vim-airline/vim-airline')
 
@@ -90,7 +89,13 @@ endif
 " ---------------------------------------
 " 編集に関する設定
 " ---------------------------------------
-"  titleを表示
+" Do not create swap files
+set noswapfile
+" incremental search
+set incsearch
+" highlighting search text
+set hlsearch
+" titleを表示
 set title
 " タブの画面上での幅
 set tabstop=4
@@ -108,8 +113,30 @@ set relativenumber
 set laststatus=2
 " カーソル行を強調
 set cursorline
+" 編集再開時に前と同じ箇所から再開
+au BufWritePost * mkview
+au BufReadPost * loadview
 " シンタックスハイライトを有効に
 syntax on
+
+" ---------------------------------------
+" remap
+" ---------------------------------------
+" insert modeやcommand modeでもhjklでカーソル移動
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+cnoremap <C-h> <Left>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+cnoremap <C-l> <Right>
+" ; => :
+nnoremap ; :
+" space2回で単語のハイライトを切り替える
+nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch!<CR>
+" カーソル下の単語を置換
+nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
 
 " --------------------------------------
 "  NERDTreeの設定
@@ -118,9 +145,8 @@ syntax on
 " dotfileの表示(1: 表示)
 let NERDTreeShowHidden=1 " ブックマークを表示(1: 表示)
 let g:NERDTreeShowBookmarks=1
-" 表示非表示の切り替え(<C-n>で開く)
-nmap <silent> <C-n>      :NERDTreeToggle<CR>
-
+" 表示非表示の切り替え(<C-x>で開く)
+nmap <silent> <C-x>      :NERDTreeToggle<CR>
 
 " -------------------------------------
 "  color schemeの設定
@@ -138,6 +164,10 @@ set fileencoding=utf-8
 "  clipboard
 "  -----------------------------------
 set clipboard+=unnamed
+" Avoid automatic indentation
+autocmd InsertLeave *
+    \ if &paste | set nopaste mouse=a | echo 'nopaste' | endif |
+    \ if &l:diff | diffupdate | endif
 
 
 "----------------------------------------------------------
