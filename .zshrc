@@ -14,6 +14,12 @@ case ${OSTYPE} in
 esac
 
 ########################################
+# 環境別の設定　
+if [ -f "$HOME/.zshrc.local" ]; then
+    source "$HOME/.zshrc.local"
+fi
+
+########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
 
