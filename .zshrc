@@ -53,8 +53,8 @@ autoload -Uz add-zsh-hook
 zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
 zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
 
-VIM_NORMAL="%K{208}%F{black}⮀%k%f%K{208}%F{white} % NORMAL %k%f%K{black}%F{208}⮀%k%f"
-VIM_INSERT="%K{075}%F{black}⮀%k%f%K{075}%F{white} % INSERT %k%f%K{black}%F{075}⮀%k%f"
+VIM_NORMAL="%K{208}%F{black}%k%f%K{208}%F{white} % NORMAL %k%f%K{black}%F{208}%k%f"
+VIM_INSERT="%K{075}%F{black}%k%f%K{075}%F{white} % INSERT %k%f%K{black}%F{075}%k%f"
 function zle-line-init zle-keymap-select {
     PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
 ${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}
