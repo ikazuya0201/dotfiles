@@ -28,9 +28,6 @@ export LANG=ja_JP.UTF-8
 autoload -Uz colors
 colors
 
-# emacs 風キーバインドにする
-bindkey -e
-
 # ヒストリの設定
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
@@ -56,12 +53,21 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 
 ########################################
-# vcs_info
+# vcs_info and vim mode
 autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
 
 zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
 zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
+
+VIM_NORMAL="%K{208}%F{black}⮀%k%f%K{208}%F{white} % NORMAL %k%f%K{black}%F{208}⮀%k%f"
+VIM_INSERT="%K{075}%F{black}⮀%k%f%K{075}%F{white} % INSERT %k%f%K{black}%F{075}⮀%k%f"
+function zle-line-init zle-keymap-select {
+    RPROMPT="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}  ${vcs_info_msg_0_}"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 function _update_vcs_info_msg() {
     LANG=en_US.UTF-8 vcs_info
@@ -109,12 +115,6 @@ setopt hist_reduce_blanks
 
 # 高機能なワイルドカード展開を使用する
 setopt extended_glob
-
-########################################
-# キーバインド
-
-# ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
-bindkey '^R' history-incremental-pattern-search-backward
 
 ########################################
 # エイリアス
@@ -235,9 +235,12 @@ fi
 
 
 # -------------------------------------------------
-# vim エイリアス
+# vim
 # -------------------------------------------------
+bindkey -v #vim mode
 alias vi='vim'
+alias vz='vim ~/.zshrc'
+alias vv='vim ~/.vimrc'
 
 # -------------------------------------------------
 # emacs エイリアス
@@ -262,14 +265,6 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
-
-# vim:set ft=zsh:
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/iimurokazuya/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/iimurokazuya/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/iimurokazuya/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/iimurokazuya/google-cloud-sdk/completion.zsh.inc'; fi
 
 # --------------------------------------------------
 # go
