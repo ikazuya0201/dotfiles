@@ -33,13 +33,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-# プロンプト
-# 1行表示
-# PROMPT="%~ %# "
-# 2行表示
-PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
-%# "
-
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
@@ -53,7 +46,7 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 
 ########################################
-# vcs_info and vim mode
+# プロンプトの表示設定
 autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
 
@@ -63,7 +56,9 @@ zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
 VIM_NORMAL="%K{208}%F{black}⮀%k%f%K{208}%F{white} % NORMAL %k%f%K{black}%F{208}⮀%k%f"
 VIM_INSERT="%K{075}%F{black}⮀%k%f%K{075}%F{white} % INSERT %k%f%K{black}%F{075}⮀%k%f"
 function zle-line-init zle-keymap-select {
-    RPROMPT="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}  ${vcs_info_msg_0_}"
+    PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
+${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}
+%# "
     zle reset-prompt
 }
 zle -N zle-line-init
