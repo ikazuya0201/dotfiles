@@ -113,6 +113,8 @@ set relativenumber
 set laststatus=2
 " カーソル行を強調
 set cursorline
+" yank to clipboard
+set clipboard=unnamed,unnamedplus
 " 編集再開時に前と同じ箇所から再開
 au BufWritePost * mkview
 au BufReadPost * loadview
