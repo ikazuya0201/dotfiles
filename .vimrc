@@ -38,8 +38,14 @@ if dein#load_state('$HOME/.cache/dein')
     " tex
     call dein#add('lervag/vimtex')
 
+    " matlab
+    call dein#add('lazywei/vim-matlab')
+
     " ヤンク履歴
     call dein#add('vim-scripts/YankRing.vim')
+
+    " easymotion
+    call dein#add('Lokaltog/vim-easymotion')
 
     if has('lua')
         " コードの補完
@@ -135,15 +141,28 @@ cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 " ; => :
 nnoremap ; :
-" space2回で単語のハイライトを切り替える
-nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch!<CR>
-" カーソル下の単語を置換
-nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
+
+" ---------------------------------------
+" vim-easymotion
+" ---------------------------------------
+let mapleader = "\<Space>"
+let g:EasyMotion_do_mapping=0
+nmap s <Plug>(easymotion-s2)
+xmap s <Plug>(easymotion-s2)
+omap z <Plug>(easymotion-s2)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+" keep cursor column with `JK` motions
+let g:EasyMotion_startofline = 0
+let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
+" Show target key with upper case to improve readability
+let g:EasyMotion_use_upper = 1
+" Jump to first match with enter & space
+let g:EasyMotion_enter_jump_first = 1
 
 " --------------------------------------
 "  NERDTreeの設定
 " --------------------------------------
-
 " dotfileの表示(1: 表示)
 let NERDTreeShowHidden=1 " ブックマークを表示(1: 表示)
 let g:NERDTreeShowBookmarks=1
