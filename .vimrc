@@ -100,7 +100,7 @@ set noswapfile
 " incremental search
 set incsearch
 " highlighting search text
-set hlsearch
+set nohlsearch
 " titleを表示
 set title
 " タブの画面上での幅
