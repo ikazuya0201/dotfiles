@@ -47,6 +47,9 @@ if dein#load_state('$HOME/.cache/dein')
     " easymotion
     call dein#add('Lokaltog/vim-easymotion')
 
+    " git
+    call dein#add('tpope/vim-fugitive')
+
     if has('lua')
         " コードの補完
         call dein#add('Shougo/neocomplete.vim')
