@@ -229,7 +229,6 @@ fi
 # -------------------------------------------------
 # vim
 # -------------------------------------------------
-bindkey -v #vim mode
 alias vi='vim'
 alias vz='vim ~/.zshrc'
 alias vv='vim ~/.vimrc'
