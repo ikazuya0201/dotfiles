@@ -24,6 +24,8 @@ set cursorline
 set clipboard=unnamed,unnamedplus
 " reload file if other client modify the file
 set autoread
+" interactive replace
+set inccommand=split
 " remember last edit position
 autocmd BufReadPost *
       \ if line("'\"") > 0 && line ("'\"") <= line("$") |
