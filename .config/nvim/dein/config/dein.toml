@@ -1,9 +1,7 @@
 [[plugins]]
 # colorscheme
 repo = 'jacoborus/tender.vim'
-hook_add = '''
-  colorscheme tender
-'''
+hook_add = 'colorscheme tender'
 
 
 [[plugins]]
@@ -24,3 +22,15 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 # display git diff
 repo = 'tpope/vim-fugitive'
+
+
+[[plugins]]
+# lsp client for vim
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
+
+
+[[plugins]]
+# code completion
+repo = 'Shougo/deoplete.nvim'
