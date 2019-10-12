@@ -50,6 +50,10 @@ if dein#load_state('$HOME/.cache/dein')
     " git
     call dein#add('tpope/vim-fugitive')
 
+    "vim-lsp
+    call dein#add('prabirshrestha/async.vim')
+    call dein#add('prabirshrestha/vim-lsp')
+
     if has('lua')
         " コードの補完
         call dein#add('Shougo/neocomplete.vim')
@@ -74,7 +78,7 @@ if dein#load_state('$HOME/.cache/dein')
 
     " rust用のプラグイン
     " call dein#add('rust-lang/rust.vim')
-    call dein#add('racer-rust/vim-racer')
+    " call dein#add('racer-rust/vim-racer')
 
     " go
     call dein#add('fatih/vim-go')
@@ -263,3 +267,23 @@ if has("autocmd")
     autocmd FileType html setlocal sw=2 sts=2 ts=2 et
 endif
 
+"  -----------------------------------
+"  Configurations for Language Server
+"  -----------------------------------
+set hidden
+
+let g:LanguageClient_serverCommands = {
+            \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+            \ }
+
+augroup LanguageClient_config
+    autocmd!
+    autocmd User LanguageClientStarted setlocal signcolumn=yes
+    autocmd User LanguageClientStopped setlocal signcolumn=auto
+augroup END
+
+let g:LanguageClient_autoStart = 1
+nnoremap <silent> <Space>lh :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> <Space>ld :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <Space>lr :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <Space>lf :call LanguageClient_textDocument_formatting()<CR>
