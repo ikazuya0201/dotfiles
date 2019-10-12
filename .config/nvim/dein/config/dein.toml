@@ -29,8 +29,9 @@ repo = 'tpope/vim-fugitive'
 repo = 'autozimu/LanguageClient-neovim'
 rev = 'next'
 build = 'bash install.sh'
+hook_source = 'source ~/.config/nvim/custom_settings/plugins/LanguageClient-neovim.vim'
 
 
 [[plugins]]
-# code completion
-repo = 'Shougo/deoplete.nvim'
+# snippet
+repo = 'Shougo/neosnippet-snippets'

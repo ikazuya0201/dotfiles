@@ -18,8 +18,6 @@ endif
 set runtimepath+=~/.config/nvim/custom_settings
 runtime! vimrc/*.vim
 runtime! vimrc/*.nvim
-runtime! plugins/*.vim
-runtime! plugins/*.nvim
 
 filetype plugin indent on
 syntax enable
