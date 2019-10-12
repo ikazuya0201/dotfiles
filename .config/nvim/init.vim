@@ -14,6 +14,7 @@ if dein#check_install()
     call dein#install()
 endif
 
+" load custom settings
 set runtimepath+=~/.config/nvim/custom_settings
 runtime! vimrc/*.vim
 runtime! vimrc/*.nvim

@@ -1,6 +1,9 @@
 [[plugins]]
 # colorscheme
 repo = 'jacoborus/tender.vim'
+hook_add = '''
+  colorscheme tender
+'''
 
 
 [[plugins]]
