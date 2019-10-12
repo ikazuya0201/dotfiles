@@ -1,14 +1,14 @@
 [[plugins]]
 # code completion
 repo = 'Shougo/deoplete.nvim'
-hook_source = 'source ~/.config/nvim/custom_settings/plugins/deoplete.vim'
+hook_add = 'source ~/.config/nvim/custom_settings/plugins/deoplete.vim'
 on_i = 1
 
 
 [[plugins]]
 # snippet
 repo = 'Shougo/neosnippet.vim'
-hook_source = 'source ~/.config/nvim/custom_settings/plugins/neosnippet.vim'
+hook_add = 'source ~/.config/nvim/custom_settings/plugins/neosnippet.vim'
 on_ft = ['snippet']
 depends = ['neosnippet-snippets']
 on_i = 1
