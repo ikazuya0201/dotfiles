@@ -1,2 +1,4 @@
 /.vim
 /.zsh
+/.config/nvim/dein/*
+!/.config/nvim/dein/config/
