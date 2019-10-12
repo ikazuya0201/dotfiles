@@ -2,3 +2,4 @@
 /.zsh
 /.config/nvim/dein/*
 !/.config/nvim/dein/config/
+bugreport.txt

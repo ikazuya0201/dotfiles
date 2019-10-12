@@ -13,5 +13,10 @@ endif
 if dein#check_install()
     call dein#install()
 endif
+
+set runtimepath+=~/.config/nvim/custom_settings
+runtime! vimrc/*.vim
+runtime! vimrc/*.nvim
+
 filetype plugin indent on
 syntax enable
