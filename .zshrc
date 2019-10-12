@@ -229,6 +229,9 @@ fi
 # -------------------------------------------------
 # vim
 # -------------------------------------------------
+if type nvim > /dev/null 2>&1; then
+    alias vim='nvim'
+fi
 alias vi='vim'
 alias vz='vim ~/.zshrc'
 alias vv='vim ~/.vimrc'
