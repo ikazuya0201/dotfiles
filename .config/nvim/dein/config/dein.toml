@@ -35,10 +35,3 @@ hook_add = 'source ~/.config/nvim/custom_settings/plugins/LanguageClient-neovim.
 [[plugins]]
 # snippet
 repo = 'Shougo/neosnippet-snippets'
-
-
-[[plugins]]
-# rust
-repo = 'rust-lang/rust.vim'
-on_ft = 'rust'
-hook_add = 'source ~/.config/nvim/custom_settings/languages/rust.vim'
