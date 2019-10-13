@@ -12,6 +12,7 @@ repo = 'tpope/vim-commentary'
 [[plugins]]
 # good status bar
 repo = 'vim-airline/vim-airline'
+hook_add = 'source ~/.config/nvim/custom_settings/plugins/airline.vim'
 
 
 [[plugins]]
