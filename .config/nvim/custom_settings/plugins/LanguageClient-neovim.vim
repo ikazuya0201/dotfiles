@@ -3,6 +3,8 @@ set hidden
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'python': ['pyls'],
+    \ 'cpp': ['/usr/local/Cellar/llvm/9.0.0/Toolchains/LLVM9.0.0.xctoolchain/usr/bin/clangd'],
+    \ 'c': ['/usr/local/Cellar/llvm/9.0.0/Toolchains/LLVM9.0.0.xctoolchain/usr/bin/clangd'],
     \ }
 
 augroup LanguageClient_config
