@@ -26,6 +26,8 @@ set clipboard=unnamed,unnamedplus
 set autoread
 " interactive replace
 set inccommand=split
+" display tab and space
+set list
 " remember last edit position
 autocmd BufReadPost *
       \ if line("'\"") > 0 && line ("'\"") <= line("$") |
