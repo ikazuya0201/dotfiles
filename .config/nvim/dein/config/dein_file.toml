@@ -21,3 +21,9 @@ on_ft = 'pug'
 # yaml
 repo = 'chase/vim-ansible-yaml'
 on_ft = 'yaml'
+
+
+[[plugins]]
+# python
+repo = 'nvie/vim-flake8'
+on_ft = 'python'
