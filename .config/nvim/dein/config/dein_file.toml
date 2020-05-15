@@ -27,3 +27,10 @@ on_ft = 'yaml'
 # python
 repo = 'nvie/vim-flake8'
 on_ft = 'python'
+
+
+[[plugins]]
+# omnetpp
+repo = 'vim-scripts/omnetpp'
+repo = 'vim-scripts/OMNeTpp-NED-syntax-file'
+on_ft = 'ned'
