@@ -279,3 +279,7 @@ if [ -e $HOME/catkin_ws/devel/setup.zsh ]; then
     source $HOME/catkin_ws/devel/setup.zsh
 fi
 
+# --------------------------------------------------
+# local
+# --------------------------------------------------
+source $HOME/.zshrc.local
