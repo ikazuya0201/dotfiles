@@ -7,4 +7,6 @@ if has("autocmd")
     autocmd FileType amber setlocal sw=2 sts=2 ts=2 et
     autocmd FileType html setlocal sw=2 sts=2 ts=2 et
     autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
+    autocmd FileType tsx setlocal sw=2 sts=2 ts=2 et
+    autocmd FileType typescript setlocal sw=2 sts=2 ts=2 et
 endif

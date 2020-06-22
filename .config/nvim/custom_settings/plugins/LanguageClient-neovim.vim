@@ -5,6 +5,9 @@ let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ 'cpp': ['/usr/local/Cellar/llvm/9.0.0/Toolchains/LLVM9.0.0.xctoolchain/usr/bin/clangd'],
     \ 'c': ['/usr/local/Cellar/llvm/9.0.0/Toolchains/LLVM9.0.0.xctoolchain/usr/bin/clangd'],
+    \ 'ts': ['eslint_d'],
+    \ 'tsx': ['eslint_d'],
+    \ 'js': ['eslint_d'],
     \ }
 
 augroup LanguageClient_config
