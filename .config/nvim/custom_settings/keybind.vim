@@ -11,3 +11,6 @@ nnoremap J <Nop>
 nnoremap K <Nop>
 vnoremap J j
 vnoremap K k
+
+" leader
+let mapleader = ' '
