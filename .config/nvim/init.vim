@@ -18,6 +18,8 @@ endif
 " load custom settings
 runtime! ./custom_settings/*.vim
 runtime! ./custom_settings/*.nvim
+runtime! ./custom_settings/plugins/*.vim
+runtime! ./custom_settings/plugins/*.nvim
 
 filetype plugin indent on
 syntax enable

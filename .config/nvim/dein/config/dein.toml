@@ -26,13 +26,14 @@ repo = 'tpope/vim-fugitive'
 
 
 [[plugins]]
-# lsp client for vim
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'bash install.sh'
-hook_add = 'source ~/.config/nvim/custom_settings/plugins/LanguageClient-neovim.vim'
+# snippet
+repo = 'Shougo/neosnippet-snippets'
 
 
 [[plugins]]
-# snippet
-repo = 'Shougo/neosnippet-snippets'
+# coc
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+on_i = 1
+merged = '0'
+hook_source = 'call coil398#init#coc#hook_source()'
