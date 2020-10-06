@@ -133,8 +133,6 @@ alias -g G='| grep'
 #  git エイリアス
 # --------------------------------------------------
 
-alias git="hub"
-
 alias g="git"
 
 alias gs='git status --short --branch'
