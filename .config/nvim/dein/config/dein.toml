@@ -26,14 +26,22 @@ repo = 'tpope/vim-fugitive'
 
 
 [[plugins]]
-# snippet
-repo = 'Shougo/neosnippet-snippets'
-
-
-[[plugins]]
 # coc
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 on_i = 1
 merged = '0'
 hook_source = 'call coil398#init#coc#hook_source()'
+
+
+[[plugins]]
+repo = 'SirVer/ultisnips'
+hook_add = '''
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/coc/ultisnips/rust.snippets']
+let g:UltiSnipsExpandTrigger="<Down>"
+'''
+
+
+[[plugins]]
+repo = 'preservim/nerdtree'
+hook_add = 'source ~/.config/nvim/custom_settings/plugins/nerdtree.vim'

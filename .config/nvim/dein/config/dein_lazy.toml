@@ -1,7 +1,0 @@
-[[plugins]]
-# snippet
-repo = 'Shougo/neosnippet.vim'
-hook_add = 'source ~/.config/nvim/custom_settings/plugins/neosnippet.vim'
-on_ft = ['snippet']
-depends = ['neosnippet-snippets']
-on_event = 'InsertEnter'
