@@ -3,8 +3,10 @@
     "clangd.path": "/Users/iimurokazuya/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
     "python.jediEnabled": false,
     "rust-analyzer.procMacro.enable": true,
+    "rust-analyzer.cargo.loadOutDirsFromCheck": false,
     "rust-analyzer.diagnostics.disabled": [
-        "macro-error"
+        "macro-error",
+        "unresolved-import"
     ],
     "coc.preferences.formatOnSaveFiletypes": ["python", "rust"]
 }
