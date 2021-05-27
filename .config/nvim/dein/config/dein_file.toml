@@ -34,9 +34,3 @@ on_ft = 'python'
 repo = 'vim-scripts/omnetpp'
 repo = 'vim-scripts/OMNeTpp-NED-syntax-file'
 on_ft = 'ned'
-
-
-[[plugins]]
-# tsx
-repo = "peitalin/vim-jsx-typescript"
-on_ft = ["tsx", "js", "ts"]
